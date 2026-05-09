@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WAKE UP CALIFORNIA — Real Housing Solutions, Local Voice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..900;1,8..60,300..900&family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream-50: #FBF7EE;
+    --cream-100: #F5EFDF;
+    --cream-200: #ECE3CB;
+    --ink: #15121A;
+    --ink-soft: #3D3736;
+    --navy: #0E2E55;          /* deeper editorial navy */
+    --navy-deep: #081C39;      /* near-black blue, for contrast */
+    --navy-mid: #1F4F88;
+    --navy-tint: #D9E1EE;
+    --red: #B72431;            /* accent red */
+    --red-deep: #7A1620;       /* deeper red for contrast */
+    --rule: #2A1F1B;
+    --paper-edge: #E0D5BD;
+  }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+background: var(--cream-50);
+color: var(--ink);
+font-family: "Source Serif 4", Georgia, serif;
+font-optical-sizing: auto;
+line-height: 1.55;
+-webkit-font-smoothing: antialiased;
+overflow-x: hidden;
+}
+
+/* Subtle paper noise texture */
+body::before {
+content: "";
+position: fixed; inset: 0;
+background-image:
+radial-gradient(circle at 20% 30%, rgba(15,46,85,0.025) 0px, transparent 1px),
+radial-gradient(circle at 80% 70%, rgba(183,36,49,0.02) 0px, transparent 1px),
+radial-gradient(circle at 50% 50%, rgba(0,0,0,0.015) 0px, transparent 1px);
+background-size: 7px 7px, 11px 11px, 5px 5px;
+pointer-events: none;
+z-index: 1;
+mix-blend-mode: multiply;
+}
+
+a { color: inherit; }
+
+/* —————– Top utility bar —————– */
+.util {
+background: var(--navy-deep);
+color: var(--cream-50);
+font-family: "Archivo", sans-serif;
+font-size: 12px;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+padding: 10px 0;
+position: relative;
+z-index: 10;
+}
+.util-inner {
+max-width: 1280px;
+margin: 0 auto;
+padding: 0 32px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 20px;
+}
+.util-left {
+display: flex; align-items: center; gap: 16px;
+}
+.util-pulse {
+width: 8px; height: 8px;
+border-radius: 50%;
+background: var(--red);
+box-shadow: 0 0 0 0 rgba(183,36,49,0.6);
+animation: pulse 2s infinite;
+}
+@keyframes pulse {
+0%, 100% { box-shadow: 0 0 0 0 rgba(183,36,49,0.6); }
+50% { box-shadow: 0 0 0 6px rgba(183,36,49,0); }
+}
+.util-link {
+color: var(--cream-50);
+text-decoration: none;
+border-bottom: 1px solid transparent;
+padding-bottom: 1px;
+transition: border-color 0.2s;
+}
+.util-link:hover { border-bottom-color: var(--red); }
+
+/* —————– Masthead —————– */
+.masthead {
+background: var(--cream-50);
+border-bottom: 3px double var(--rule);
+position: sticky;
+top: 0;
+z-index: 20;
+backdrop-filter: blur(8px);
+background: rgba(251, 247, 238, 0.96);
+}
+.masthead-inner {
+max-width: 1280px;
+margin: 0 auto;
+padding: 18px 32px;
+display: grid;
+grid-template-columns: auto 1fr auto;
+align-items: center;
+gap: 32px;
+}
+.brandmark {
+display: flex; align-items: center; gap: 14px;
+text-decoration: none;
+}
+.brand-seal {
+width: 56px; height: 56px;
+background: var(--navy-deep);
+border-radius: 50%;
+display: grid; place-items: center;
+color: var(--cream-50);
+font-family: "Archivo", sans-serif;
+font-weight: 900;
+font-size: 20px;
+letter-spacing: -0.02em;
+position: relative;
+}
+.brand-seal::after {
+content: "";
+position: absolute; inset: -4px;
+border: 1px solid var(--rule);
+border-radius: 50%;
+opacity: 0.4;
+}
+.brand-flame {
+color: var(--red);
+font-size: 22px;
+line-height: 1;
+}
+.brand-name {
+font-family: "DM Serif Display", serif;
+font-size: 26px;
+line-height: 0.9;
+letter-spacing: -0.01em;
+color: var(--navy-deep);
+}
+.brand-tag {
+display: block;
+font-family: "Archivo", sans-serif;
+font-size: 10px;
+letter-spacing: 0.28em;
+text-transform: uppercase;
+color: var(--red);
+margin-top: 4px;
+}
+nav.primary {
+display: flex;
+justify-content: center;
+gap: 26px;
+font-family: "Archivo", sans-serif;
+font-size: 13px;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 0.12em;
+}
+nav.primary a {
+text-decoration: none;
+color: var(--ink);
+position: relative;
+padding: 4px 0;
+transition: color 0.2s;
+}
+nav.primary a::after {
+content: "";
+position: absolute;
+left: 0; right: 100%;
+bottom: -2px;
+height: 2px;
+background: var(--red);
+transition: right 0.3s ease;
+}
+nav.primary a:hover { color: var(--navy-deep); }
+nav.primary a:hover::after { right: 0; }
+
+.cta-donate {
+background: var(--red);
+color: var(--cream-50);
+text-decoration: none;
+font-family: "Archivo", sans-serif;
+font-size: 12px;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 0.18em;
+padding: 12px 22px;
+border-radius: 2px;
+transition: background 0.2s, transform 0.2s;
+display: inline-block;
+}
+.cta-donate:hover {
+background: var(--red-deep);
+transform: translateY(-1px);
+}
+
+/* —————– Hero —————– */
+.hero {
+position: relative;
+background: var(--navy-deep);
+color: var(--cream-50);
+padding: 96px 0 0 0;
+overflow: hidden;
+}
+.hero::before {
+content: "";
+position: absolute;
+inset: 0;
+background:
+radial-gradient(ellipse at 80% 20%, rgba(183,36,49,0.18), transparent 55%),
+radial-gradient(ellipse at 0% 100%, rgba(31,79,136,0.45), transparent 60%);
+pointer-events: none;
+}
+.hero-inner {
+max-width: 1280px;
+margin: 0 auto;
+padding: 0 32px 0 32px;
+display: grid;
+grid-template-columns: 1.15fr 1fr;
+gap: 64px;
+align-items: end;
+position: relative;
+z-index: 2;
+}
+.hero-eyebrow {
+font-family: "Archivo", sans-serif;
+font-size: 12px;
+letter-spacing: 0.32em;
+text-transform: uppercase;
+color: var(--red);
+margin-bottom: 28px;
+display: flex; align-items: center; gap: 14px;
+}
+.hero-eyebrow::before {
+content: "";
+width: 32px; height: 1px; background: var(--red);
+}
+.hero h1 {
+font-family: "DM Serif Display", serif;
+font-size: clamp(48px, 7vw, 96px);
+line-height: 0.95;
+letter-spacing: -0.025em;
+margin-bottom: 32px;
+color: var(--cream-50);
+}
+.hero h1 em {
+font-style: italic;
+color: var(--red);
+position: relative;
+}
+.hero-lede {
+font-family: "Source Serif 4", serif;
+font-size: clamp(18px, 1.4vw, 21px);
+line-height: 1.55;
+color: rgba(251,247,238,0.85);
+max-width: 560px;
+margin-bottom: 40px;
+}
+.hero-actions {
+display: flex;
+gap: 14px;
+flex-wrap: wrap;
+margin-bottom: 80px;
+}
+.btn-primary, .btn-ghost {
+font-family: "Archivo", sans-serif;
+font-size: 13px;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 0.16em;
+padding: 16px 28px;
+text-decoration: none;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+transition: all 0.25s;
+border-radius: 2px;
+}
+.btn-primary {
+background: var(--red);
+color: var(--cream-50);
+}
+.btn-primary:hover {
+background: var(--cream-50);
+color: var(--red-deep);
+}
+.btn-ghost {
+background: transparent;
+color: var(--cream-50);
+border: 1px solid rgba(251,247,238,0.4);
+}
+.btn-ghost:hover {
+background: rgba(251,247,238,0.1);
+border-color: var(--cream-50);
+}
+.arrow { transition: transform 0.25s; }
+.btn-primary:hover .arrow,
+.btn-ghost:hover .arrow { transform: translateX(4px); }
+
+/* hero meta card — Monday Zoom */
+.hero-card {
+background: var(--cream-50);
+color: var(--navy-deep);
+padding: 36px 36px 32px 36px;
+margin-bottom: 80px;
+position: relative;
+box-shadow: 0 24px 60px -20px rgba(0,0,0,0.4);
+border-top: 4px solid var(--red);
+}
+.hero-card-tag {
+font-family: "Archivo", sans-serif;
+font-size: 11px;
+font-weight: 800;
+letter-spacing: 0.28em;
+text-transform: uppercase;
+color: var(--red);
+margin-bottom: 16px;
+display: flex; align-items: center; gap: 10px;
+}
+.hero-card-tag::before, .hero-card-tag::after {
+content: ""; flex: 1; height: 1px;
+background: var(--red);
+opacity: 0.5;
+}
+.hero-card h3 {
+font-family: "DM Serif Display", serif;
+font-size: 30px;
+line-height: 1.1;
+margin-bottom: 12px;
+color: var(--navy-deep);
+}
+.hero-card-when {
+font-family: "Archivo", sans-serif;
+font-size: 14px;
+font-weight: 600;
+letter-spacing: 0.04em;
+color: var(--ink-soft);
+margin-bottom: 18px;
+}
+.hero-card-when strong {
+color: var(--red);
+font-weight: 700;
+}
+.hero-card-list {
+list-style: none;
+margin-bottom: 22px;
+padding-left: 0;
+border-top: 1px solid var(--paper-edge);
+padding-top: 18px;
+}
+.hero-card-list li {
+padding: 6px 0;
+font-size: 15px;
+color: var(--ink-soft);
+display: flex; gap: 10px;
+}
+.hero-card-list li::before {
+content: "→";
+color: var(--red);
+font-weight: 700;
+}
+.hero-card .btn-primary {
+width: 100%;
+justify-content: center;
+}
+
+/* —————– Marquee ticker —————– */
+.ticker {
+background: var(--cream-100);
+border-top: 1px solid var(--paper-edge);
+border-bottom: 1px solid var(--paper-edge);
+overflow: hidden;
+padding: 14px 0;
+font-family: "Archivo", sans-serif;
+font-size: 13px;
+font-weight: 600;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(--navy-deep);
+position: relative;
+}
+.ticker-track {
+display: flex; gap: 60px;
+animation: scroll 50s linear infinite;
+white-space: nowrap;
+}
+.ticker-track span {
+display: inline-flex; align-items: center; gap: 60px;
+}
+.ticker-track span::after {
+content: "✦";
+color: var(--red);
+font-size: 10px;
+}
+@keyframes scroll {
+from { transform: translateX(0); }
+to { transform: translateX(-50%); }
+}
+
+/* —————– Section base —————– */
+section { position: relative; z-index: 2; }
+.container {
+max-width: 1280px;
+margin: 0 auto;
+padding: 0 32px;
+}
+.section-pad { padding: 110px 0; }
+.section-pad-sm { padding: 70px 0; }
+
+.kicker {
+font-family: "Archivo", sans-serif;
+font-size: 12px;
+font-weight: 700;
+letter-spacing: 0.32em;
+text-transform: uppercase;
+color: var(--red);
+margin-bottom: 18px;
+display: flex; align-items: center; gap: 14px;
+}
+.kicker::before {
+content: "";
+width: 32px; height: 1px; background: var(--red);
+}
+.section-h {
+font-family: "DM Serif Display", serif;
+font-size: clamp(36px, 4.5vw, 64px);
+line-height: 1;
+letter-spacing: -0.02em;
+color: var(--navy-deep);
+margin-bottom: 24px;
+}
+.section-h em { font-style: italic; color: var(--red); }
+.section-sub {
+font-size: 19px;
+line-height: 1.6;
+color: var(--ink-soft);
+max-width: 720px;
+margin-bottom: 56px;
+}
+
+/* —————– Featured: Why we exist —————– */
+.why-grid {
+display: grid;
+grid-template-columns: 5fr 7fr;
+gap: 80px;
+align-items: start;
+}
+.why-quote {
+border-left: 3px solid var(--red);
+padding: 8px 0 8px 28px;
+font-family: "DM Serif Display", serif;
+font-size: 32px;
+line-height: 1.2;
+color: var(--navy-deep);
+margin-top: 12px;
+}
+.why-quote em { color: var(--red); font-style: italic; }
+.why-attrib {
+font-family: "Archivo", sans-serif;
+font-size: 12px;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(--ink-soft);
+margin-top: 24px;
+}
+.why-body p {
+font-size: 17px;
+line-height: 1.7;
+color: var(--ink-soft);
+margin-bottom: 20px;
+}
+.why-body p strong { color: var(--ink); }
+
+/* —————– Myth-busters —————– */
+.myths {
+background: var(--navy-deep);
+color: var(--cream-50);
+padding: 110px 0;
+position: relative;
+overflow: hidden;
+}
+.myths::before {
+content: "";
+position: absolute; inset: 0;
+background:
+radial-gradient(ellipse at 100% 0%, rgba(183,36,49,0.15), transparent 50%);
+pointer-events: none;
+}
+.myths .kicker { color: var(--cream-50); }
+.myths .kicker::before { background: var(--cream-50); }
+.myths .section-h { color: var(--cream-50); }
+.myths .section-sub { color: rgba(251,247,238,0.8); }
+
+.myth-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 0;
+border-top: 1px solid rgba(251,247,238,0.2);
+border-left: 1px solid rgba(251,247,238,0.2);
+margin-top: 32px;
+position: relative;
+z-index: 2;
+}
+.myth {
+border-right: 1px solid rgba(251,247,238,0.2);
+border-bottom: 1px solid rgba(251,247,238,0.2);
+padding: 40px 32px;
+transition: background 0.3s;
+position: relative;
+}
+.myth:hover { background: rgba(251,247,238,0.04); }
+.myth-num {
+font-family: "DM Serif Display", serif;
+font-size: 64px;
+line-height: 0.9;
+color: var(--red);
+margin-bottom: 20px;
+font-style: italic;
+}
+.myth-claim {
+font-family: "Archivo", sans-serif;
+font-size: 11px;
+font-weight: 700;
+letter-spacing: 0.22em;
+text-transform: uppercase;
+color: rgba(251,247,238,0.6);
+margin-bottom: 8px;
+}
+.myth h3 {
+font-family: "DM Serif Display", serif;
+font-size: 26px;
+line-height: 1.15;
+color: var(--cream-50);
+margin-bottom: 16px;
+}
+.myth p {
+font-size: 15px;
+line-height: 1.65;
+color: rgba(251,247,238,0.78);
+}
+
+/* —————– Three-up issue cards —————– */
+.issues-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 32px;
+}
+.issue-card {
+background: var(--cream-100);
+padding: 36px 32px 32px 32px;
+border-bottom: 4px solid var(--navy-deep);
+transition: border-color 0.3s, transform 0.3s;
+display: flex;
+flex-direction: column;
+}
+.issue-card:hover {
+border-bottom-color: var(--red);
+transform: translateY(-3px);
+}
+.issue-icon {
+width: 48px; height: 48px;
+background: var(--navy-deep);
+color: var(--cream-50);
+display: grid; place-items: center;
+margin-bottom: 24px;
+font-family: "DM Serif Display", serif;
+font-size: 22px;
+font-style: italic;
+}
+.issue-card:hover .issue-icon { background: var(--red); }
+.issue-card h3 {
+font-family: "DM Serif Display", serif;
+font-size: 26px;
+line-height: 1.15;
+color: var(--navy-deep);
+margin-bottom: 14px;
+}
+.issue-card p {
+font-size: 15.5px;
+line-height: 1.65;
+color: var(--ink-soft);
+margin-bottom: 24px;
+flex-grow: 1;
+}
+.issue-link {
+font-family: "Archivo", sans-serif;
+font-size: 12px;
+font-weight: 700;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+color: var(--red);
+text-decoration: none;
+display: inline-flex;
+gap: 8px;
+align-items: center;
+}
+
+/* —————– CTA bar —————– */
+.cta-bar {
+background: var(--red);
+color: var(--cream-50);
+padding: 80px 0;
+position: relative;
+overflow: hidden;
+}
+.cta-bar::before {
+content: "WAKE UP";
+position: absolute;
+right: -40px; bottom: -60px;
+font-family: "DM Serif Display", serif;
+font-size: 280px;
+line-height: 0.8;
+color: rgba(0,0,0,0.08);
+pointer-events: none;
+letter-spacing: -0.04em;
+font-style: italic;
+}
+.cta-bar-inner {
+display: grid;
+grid-template-columns: 2fr 1fr;
+gap: 60px;
+align-items: center;
+position: relative;
+z-index: 2;
+}
+.cta-bar h2 {
+font-family: "DM Serif Display", serif;
+font-size: clamp(36px, 4vw, 56px);
+line-height: 1;
+letter-spacing: -0.02em;
+}
+.cta-bar h2 em { font-style: italic; }
+.cta-bar p {
+margin-top: 18px;
+font-size: 17px;
+line-height: 1.55;
+max-width: 600px;
+color: rgba(251,247,238,0.92);
+}
+.cta-bar-actions {
+display: flex; flex-direction: column; gap: 12px;
+}
+.cta-bar .btn-primary {
+background: var(--cream-50);
+color: var(--red-deep);
+}
+.cta-bar .btn-primary:hover {
+background: var(--navy-deep);
+color: var(--cream-50);
+}
+.cta-bar .btn-ghost {
+border-color: rgba(251,247,238,0.6);
+}
+
+/* —————– Videos / Latest —————– */
+.videos {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 28px;
+}
+.video-card {
+background: var(--cream-50);
+cursor: pointer;
+transition: transform 0.3s;
+border: 1px solid var(--paper-edge);
+}
+.video-card:hover { transform: translateY(-4px); }
+.video-thumb {
+aspect-ratio: 16 / 9;
+background: var(--navy-deep);
+position: relative;
+overflow: hidden;
+}
+.video-thumb-img {
+width: 100%; height: 100%;
+object-fit: cover;
+opacity: 0.85;
+}
+.video-play {
+position: absolute;
+top: 50%; left: 50%;
+transform: translate(-50%, -50%);
+width: 64px; height: 64px;
+background: var(--red);
+border-radius: 50%;
+display: grid; place-items: center;
+color: var(--cream-50);
+font-size: 22px;
+transition: transform 0.3s, background 0.3s;
+}
+.video-card:hover .video-play {
+transform: translate(-50%, -50%) scale(1.1);
+background: var(--cream-50);
+color: var(--red);
+}
+.video-meta {
+padding: 24px 24px 28px 24px;
+}
+.video-meta-tag {
+font-family: "Archivo", sans-serif;
+font-size: 11px;
+font-weight: 700;
+letter-spacing: 0.22em;
+text-transform: uppercase;
+color: var(--red);
+margin-bottom: 10px;
+}
+.video-meta h4 {
+font-family: "DM Serif Display", serif;
+font-size: 22px;
+line-height: 1.15;
+color: var(--navy-deep);
+margin-bottom: 8px;
+}
+.video-meta p {
+font-size: 14.5px;
+line-height: 1.55;
+color: var(--ink-soft);
+}
+
+/* SVG faux thumb fallbacks */
+.thumb-build { background: linear-gradient(135deg, #2a4a6a 0%, #0E2E55 60%, #081C39 100%); }
+.thumb-music { background: linear-gradient(135deg, #6a3a25 0%, #B72431 70%, #7A1620 100%); }
+.thumb-money { background: linear-gradient(135deg, #2d5d4f 0%, #0E2E55 80%); }
+.thumb-pattern {
+position: absolute; inset: 0;
+background-image:
+repeating-linear-gradient(45deg, rgba(255,255,255,0.04) 0 2px, transparent 2px 12px);
+}
+
+/* —————– Footer —————– */
+footer {
+background: var(--navy-deep);
+color: var(--cream-50);
+padding: 80px 0 32px 0;
+position: relative;
+}
+
+/* —————– Second marquee — red, contrarian —————– */
+.ticker-red {
+background: var(--red);
+color: var(--cream-50);
+border-top: 0;
+border-bottom: 0;
+padding: 18px 0;
+font-family: "Archivo", sans-serif;
+font-size: 14px;
+font-weight: 700;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+overflow: hidden;
+position: relative;
+}
+.ticker-red .ticker-track {
+animation: scroll-rev 60s linear infinite;
+}
+.ticker-red .ticker-track span::after {
+content: "✕";
+color: var(--cream-50);
+opacity: 0.6;
+}
+@keyframes scroll-rev {
+from { transform: translateX(-50%); }
+to { transform: translateX(0); }
+}
+
+/* —————– YIMBY / Abundance investigative block —————– */
+.expose {
+background: var(--cream-50);
+padding: 110px 0;
+position: relative;
+}
+.expose-grid {
+display: grid;
+grid-template-columns: 5fr 7fr;
+gap: 80px;
+align-items: start;
+}
+.expose-stamp {
+position: sticky;
+top: 120px;
+}
+.expose-stamp-tag {
+font-family: "Archivo", sans-serif;
+font-size: 11px;
+font-weight: 800;
+letter-spacing: 0.32em;
+text-transform: uppercase;
+color: var(--red);
+margin-bottom: 14px;
+}
+.expose-stamp h2 {
+font-family: "DM Serif Display", serif;
+font-size: clamp(40px, 5vw, 68px);
+line-height: 0.95;
+letter-spacing: -0.025em;
+color: var(--navy-deep);
+margin-bottom: 24px;
+}
+.expose-stamp h2 em {
+font-style: italic;
+color: var(--red);
+}
+.expose-stamp .stamp-meta {
+font-family: "Archivo", sans-serif;
+font-size: 11px;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(--ink-soft);
+border-top: 2px solid var(--navy-deep);
+padding-top: 14px;
+margin-top: 24px;
+}
+
+.expose-body {
+font-size: 18px;
+line-height: 1.75;
+color: var(--ink);
+}
+.expose-body p { margin-bottom: 22px; }
+.expose-body p.lede::first-letter {
+font-family: "DM Serif Display", serif;
+font-size: 76px;
+line-height: 0.9;
+float: left;
+padding: 4px 14px 0 0;
+color: var(--red);
+font-style: italic;
+}
+.expose-body strong { color: var(--navy-deep); }
+.expose-body em.flag {
+font-style: italic;
+color: var(--red);
+font-weight: 600;
+}
+
+.expose-callout {
+margin: 36px 0;
+padding: 28px 32px;
+background: var(--navy-deep);
+color: var(--cream-50);
+position: relative;
+}
+.expose-callout::before {
+content: "";
+position: absolute;
+top: -10px; left: 24px;
+width: 24px; height: 24px;
+background: var(--red);
+transform: rotate(45deg);
+}
+.expose-callout-label {
+font-family: "Archivo", sans-serif;
+font-size: 10px;
+font-weight: 800;
+letter-spacing: 0.32em;
+text-transform: uppercase;
+color: var(--cream-50);
+opacity: 0.7;
+margin-bottom: 10px;
+position: relative;
+}
+.expose-callout p {
+font-family: "DM Serif Display", serif;
+font-style: italic;
+font-size: 22px;
+line-height: 1.3;
+color: var(--cream-50);
+margin: 0;
+}
+.expose-callout p em { color: var(--red); font-style: italic; }
+
+/* Pull-quote pair beneath body */
+.expose-pulls {
+margin-top: 48px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 32px;
+border-top: 2px solid var(--navy-deep);
+padding-top: 32px;
+}
+.expose-pull {
+border-left: 3px solid var(--red);
+padding-left: 20px;
+}
+.expose-pull-label {
+font-family: "Archivo", sans-serif;
+font-size: 10px;
+font-weight: 800;
+letter-spacing: 0.28em;
+text-transform: uppercase;
+color: var(--red);
+margin-bottom: 8px;
+}
+.expose-pull p {
+font-family: "DM Serif Display", serif;
+font-size: 22px;
+line-height: 1.2;
+color: var(--navy-deep);
+margin: 0;
+}
+
+/* —————– Voice icons (inline SVG holders) —————– */
+.voice-icon {
+width: 44px; height: 44px;
+background: var(--navy-deep);
+color: var(--cream-50);
+display: grid; place-items: center;
+margin-bottom: 18px;
+transition: background 0.3s, transform 0.3s;
+border-radius: 2px;
+}
+.voice:hover .voice-icon {
+background: var(--red);
+transform: rotate(-4deg) scale(1.05);
+}
+.voice-icon svg { width: 24px; height: 24px; stroke: currentColor; }
+
+/* —————– Coalition / Many voices —————– */
+.coalition {
+background: var(--cream-100);
+padding: 110px 0;
+position: relative;
+overflow: hidden;
+}
+.coalition::before {
+content: "";
+position: absolute;
+top: 0; left: 0; right: 0;
+height: 1px;
+background: linear-gradient(90deg, transparent, var(--paper-edge), transparent);
+}
+.coalition-intro {
+max-width: 820px;
+margin-bottom: 64px;
+}
+.coalition-intro .section-h em {
+display: inline;
+}
+.coalition-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 0;
+border-top: 2px solid var(--navy-deep);
+}
+.voice {
+border-bottom: 1px solid rgba(14,46,85,0.18);
+border-right: 1px solid rgba(14,46,85,0.18);
+padding: 36px 32px 36px 32px;
+position: relative;
+background: transparent;
+transition: background 0.3s, transform 0.3s;
+}
+.voice:nth-child(3n) { border-right: none; }
+.voice:hover {
+background: var(--cream-50);
+transform: translateY(-2px);
+}
+.voice-num {
+font-family: "DM Serif Display", serif;
+font-style: italic;
+font-size: 14px;
+color: var(--red);
+letter-spacing: 0.06em;
+margin-bottom: 14px;
+display: block;
+}
+.voice h3 {
+font-family: "DM Serif Display", serif;
+font-size: 26px;
+line-height: 1.1;
+color: var(--navy-deep);
+margin-bottom: 12px;
+letter-spacing: -0.01em;
+}
+.voice h3 em {
+font-style: italic;
+color: var(--red);
+}
+.voice p {
+font-size: 15px;
+line-height: 1.6;
+color: var(--ink-soft);
+}
+.voice-tag {
+display: inline-block;
+font-family: "Archivo", sans-serif;
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 0.22em;
+text-transform: uppercase;
+color: var(--red);
+margin-bottom: 10px;
+}
+
+/* The closing pull-quote that sits below the grid */
+.coalition-coda {
+margin-top: 72px;
+padding: 40px 0 0 0;
+border-top: 2px solid var(--navy-deep);
+display: grid;
+grid-template-columns: 1fr 1.6fr;
+gap: 60px;
+align-items: start;
+}
+.coalition-coda-label {
+font-family: "Archivo", sans-serif;
+font-size: 11px;
+font-weight: 700;
+letter-spacing: 0.32em;
+text-transform: uppercase;
+color: var(--red);
+}
+.coalition-coda blockquote {
+font-family: "DM Serif Display", serif;
+font-size: 28px;
+line-height: 1.25;
+color: var(--navy-deep);
+border-left: 3px solid var(--red);
+padding-left: 28px;
+}
+.coalition-coda blockquote em { color: var(--red); font-style: italic; }
+
+@media (max-width: 1024px) {
+.coalition-grid { grid-template-columns: repeat(2, 1fr); }
+.voice:nth-child(3n) { border-right: 1px solid rgba(14,46,85,0.18); }
+.voice:nth-child(2n) { border-right: none; }
+.coalition-coda { grid-template-columns: 1fr; gap: 24px; }
+}
+@media (max-width: 600px) {
+.coalition-grid { grid-template-columns: 1fr; }
+.voice { border-right: none !important; }
+.coalition-coda blockquote { font-size: 22px; padding-left: 20px; }
+}
+
+.footer-grid {
+display: grid;
+grid-template-columns: 2fr 1fr 1fr 1.2fr;
+gap: 60px;
+margin-bottom: 60px;
+}
+footer .brand-name { color: var(--cream-50); }
+footer .brand-name em { color: var(--red); font-style: italic; }
+.footer-tagline {
+margin-top: 18px;
+font-size: 15px;
+line-height: 1.6;
+color: rgba(251,247,238,0.7);
+max-width: 360px;
+}
+.footer-h {
+font-family: "Archivo", sans-serif;
+font-size: 11px;
+font-weight: 700;
+letter-spacing: 0.22em;
+text-transform: uppercase;
+color: var(--red);
+margin-bottom: 18px;
+}
+.footer-list { list-style: none; }
+.footer-list li { margin-bottom: 10px; }
+.footer-list a {
+color: rgba(251,247,238,0.85);
+text-decoration: none;
+font-size: 14px;
+transition: color 0.2s;
+}
+.footer-list a:hover { color: var(--red); }
+.footer-address {
+font-size: 14px;
+line-height: 1.7;
+color: rgba(251,247,238,0.75);
+}
+.footer-base {
+border-top: 1px solid rgba(251,247,238,0.15);
+padding-top: 28px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-family: "Archivo", sans-serif;
+font-size: 11px;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: rgba(251,247,238,0.5);
+}
+
+/* —————– Responsive —————– */
+@media (max-width: 1024px) {
+nav.primary { display: none; }
+.hero-inner { grid-template-columns: 1fr; gap: 40px; }
+.why-grid { grid-template-columns: 1fr; gap: 40px; }
+.myth-grid { grid-template-columns: repeat(2, 1fr); }
+.issues-grid { grid-template-columns: 1fr; }
+.videos { grid-template-columns: 1fr; }
+.cta-bar-inner { grid-template-columns: 1fr; }
+.footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+@media (max-width: 600px) {
+.util-inner { font-size: 10px; }
+.util-left span:not(.util-pulse) { display: none; }
+.myth-grid { grid-template-columns: 1fr; }
+.footer-grid { grid-template-columns: 1fr; }
+.footer-base { flex-direction: column; gap: 14px; text-align: center; }
+.section-pad { padding: 80px 0; }
+.why-quote { font-size: 24px; }
+}
+
+/* —————– Reveal animation —————– */
+.reveal {
+opacity: 0;
+transform: translateY(20px);
+transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.in {
+opacity: 1;
+transform: translateY(0);
+}
+</style>
+
+</head>
+<body>
+
+<!-- Utility bar -->
+
+<div class="util">
+  <div class="util-inner">
+    <div class="util-left">
+      <span class="util-pulse" aria-hidden="true"></span>
+      <span>Next Zoom: Mon, Apr 27 · 5:00 PM PT</span>
+    </div>
+    <a href="#zoom" class="util-link">Register →</a>
+  </div>
+</div>
+
+<!-- Masthead -->
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a href="/" class="brandmark">
+      <div class="brand-seal">
+        <span class="brand-flame">▲</span>
+      </div>
+      <div>
+        <div class="brand-name">Wake Up California</div>
+        <span class="brand-tag">501(c)(4) · Statewide</span>
+      </div>
+    </a>
+    <nav class="primary">
+      <a href="#why">Why</a>
+      <a href="#expose">Exposed</a>
+      <a href="#who">Voices</a>
+      <a href="#fire">Fire</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#legislation">Legislation</a>
+    </nav>
+    <a href="#donate" class="cta-donate">Donate</a>
+  </div>
+</header>
+
+<!-- Hero -->
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">A Statewide Reckoning</div>
+      <h1>
+        Real housing.<br>
+        Local voice.<br>
+        <em>No more death traps.</em>
+      </h1>
+      <p class="hero-lede">
+        California is being densified by mandate &mdash; with no regard for fire risk, evacuation capacity, or the people who already live here. We expose the truth, and channel community outrage into organized action.
+      </p>
+      <div class="hero-actions">
+        <a href="#why" class="btn-primary">
+          See what's at stake
+          <span class="arrow">→</span>
+        </a>
+        <a href="#zoom" class="btn-ghost">
+          Join Monday's Zoom
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+<div class="hero-card" id="zoom">
+  <div class="hero-card-tag">This Monday's Zoom</div>
+  <h3>Catch 22: State Housing Policy Undermines Required Safety &amp; Evacuation Planning</h3>
+  <div class="hero-card-when"><strong>Apr 27</strong> · 5:00 PM Pacific</div>
+  <ul class="hero-card-list">
+    <li>Marylee Guinon, SAFRR co-founder</li>
+    <li>Judith Olney, Local Advocacy Liaison</li>
+    <li>Sonia Taylor, fire &amp; housing law expert</li>
+  </ul>
+  <a href="#" class="btn-primary">
+    Register for Zoom
+    <span class="arrow">→</span>
+  </a>
+</div>
+
+  </div>
+</section>
+
+<!-- Marquee ticker -->
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>SB 79 advances</span>
+    <span>RHNA targets miss reality</span>
+    <span>Palisades fire — density &amp; spread</span>
+    <span>2.5 million unit mandate fails audit</span>
+    <span>"Low income" units priced at $100K incomes</span>
+    <span>Cities drained by paperwork</span>
+    <!-- duplicate for seamless loop -->
+    <span>SB 79 advances</span>
+    <span>RHNA targets miss reality</span>
+    <span>Palisades fire — density &amp; spread</span>
+    <span>2.5 million unit mandate fails audit</span>
+    <span>"Low income" units priced at $100K incomes</span>
+    <span>Cities drained by paperwork</span>
+  </div>
+</div>
+
+<!-- Why -->
+
+<section class="section-pad" id="why">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <div class="kicker">Why we exist</div>
+        <h2 class="section-h">Top-down<br>mandates aren't<br>working.</h2>
+        <div class="why-quote">
+          California's communities are <em>not interchangeable</em> &mdash; and the state's own data says we don't need 2.5 million more units.
+        </div>
+        <div class="why-attrib">— Department of Finance Projections, flat through 2060</div>
+      </div>
+      <div class="why-body">
+        <p>
+          A vision of California created by special interest groups claims we have a housing crisis at <em>all levels</em>, and forces development into our communities <strong>regardless of fire risk, infrastructure, transit access, or actual job locations</strong>.
+        </p>
+        <p>
+          The true crisis is a lack of housing <strong>affordable to lower-income families</strong>. But almost all of the forced development is luxury &mdash; at a steep cost to our environment, our infrastructure, and our safety.
+        </p>
+        <p>
+          Streamlining laws fast-track huge projects without impact studies, community input, or long-term planning. The state is more interested in unit count than evacuation capacity.
+        </p>
+        <p>
+          <strong>Wake Up California</strong> believes lasting solutions require affordable homes, local stewardship, and public accountability. Cities should retain the authority to plan &mdash; not just process applications.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Myths -->
+
+<section class="myths">
+  <div class="container">
+    <div class="kicker">Six things you should know</div>
+    <h2 class="section-h">Did you<br>know?</h2>
+    <p class="section-sub">The numbers don't add up. The narratives don't match the data. Here's what the state isn't telling you.</p>
+    <div class="myth-grid">
+      <div class="myth">
+        <div class="myth-num">01</div>
+        <div class="myth-claim">Mandate</div>
+        <h3>No need for 2.5 million units.</h3>
+        <p>The need to house 10 million more residents is unsupported &mdash; the methodology behind that number failed audit.</p>
+      </div>
+      <div class="myth">
+        <div class="myth-num">02</div>
+        <div class="myth-claim">Affordability myth</div>
+        <h3>Supply doesn't create affordability.</h3>
+        <p>Housing prices don't trickle down. Building more luxury housing doesn't lower costs. We aren't building enough of the right type.</p>
+      </div>
+      <div class="myth">
+        <div class="myth-num">03</div>
+        <div class="myth-claim">Definitions</div>
+        <h3>"Low income" units for people making $100K.</h3>
+        <p>Cities can't require developers to build truly affordable housing &mdash; so they build luxury, and call it "low income" by definition.</p>
+      </div>
+      <div class="myth">
+        <div class="myth-num">04</div>
+        <div class="myth-claim">One-size-fits-all</div>
+        <h3>Why densify the whole state?</h3>
+        <p>Mandates are dumped on every locality regardless of infrastructure, hazards, transit, water supply, or job creation.</p>
+      </div>
+      <div class="myth">
+        <div class="myth-num">05</div>
+        <div class="myth-claim">Fire risk</div>
+        <h3>Densification in hazard zones can be deadly.</h3>
+        <p>Increasing density in fire hazard areas means structure-to-structure spread, like we just saw in the Palisades.</p>
+      </div>
+      <div class="myth">
+        <div class="myth-num">06</div>
+        <div class="myth-claim">Hidden cost</div>
+        <h3>City resources are being drained.</h3>
+        <p>Just the paperwork to satisfy state laws costs localities hundreds of thousands &mdash; even millions &mdash; that won't go toward housing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Expose: What is this based on? -->
+
+<section class="expose" id="expose">
+  <div class="container">
+    <div class="expose-grid">
+      <aside class="expose-stamp">
+        <div class="expose-stamp-tag">— What is this based on?</div>
+        <h2>The YIMBY /<br>Abundance<br><em>agenda.</em></h2>
+        <div class="stamp-meta">An astroturf strategy &mdash; not a movement.</div>
+      </aside>
+      <div class="expose-body">
+        <p class="lede">
+          The legislation reshaping California &mdash; SB 9, SB 35, SB 423, SB 79 &mdash; is presented as a <strong>grassroots response to a housing crisis</strong>. It isn&rsquo;t.
+        </p>
+        <p>
+          It&rsquo;s the policy product of a coordinated <em class="flag">YIMBY / Abundance</em> agenda &mdash; an astroturf strategy that successfully recruited disaffected younger Californians who can&rsquo;t find a job or a home, and pointed their frustration at neighborhoods, zoning, and CEQA.
+        </p>
+
+    <div class="expose-callout">
+      <div class="expose-callout-label">The Sleight of Hand</div>
+      <p>
+        Frame neighborhood preservation as the cause of the housing crisis. Then sell the legislative cure &mdash; <em>which happens to deliver every concession the development industry has wanted for thirty years.</em>
+      </p>
+    </div>
+
+    <p>
+      The cure is engineered to benefit <strong>large developers, institutional investors, and corporate landlords</strong> &mdash; at direct cost to communities, environmental review, fire safety, local democracy, and the families already living in California.
+    </p>
+    <p>
+      The result is predictable. Luxury units labeled affordable. Single-family homes consolidated into corporate portfolios. Cities forced to absorb compliance costs while losing the authority to plan. Fire-prone neighborhoods densified without evacuation studies. The actual housing crisis &mdash; affordability for working families &mdash; <em class="flag">left untouched</em>.
+    </p>
+    <p>
+      Wake Up California exists to name the strategy, expose the funders, and rebuild a politics where housing policy serves <strong>communities, not portfolios</strong>.
+    </p>
+
+    <div class="expose-pulls">
+      <div class="expose-pull">
+        <div class="expose-pull-label">The pitch</div>
+        <p>&ldquo;Build more, faster, anywhere.&rdquo;</p>
+      </div>
+      <div class="expose-pull">
+        <div class="expose-pull-label">The reality</div>
+        <p>Build luxury, profitably, where it pays.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<!-- Second marquee — red, contrarian -->
+
+<div class="ticker ticker-red" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Astroturf, not grassroots</span>
+    <span>Engineered for developers</span>
+    <span>Affordable in name only</span>
+    <span>Communities pay the bill</span>
+    <span>Local control under siege</span>
+    <span>Fire risk ignored</span>
+    <span>Astroturf, not grassroots</span>
+    <span>Engineered for developers</span>
+    <span>Affordable in name only</span>
+    <span>Communities pay the bill</span>
+    <span>Local control under siege</span>
+    <span>Fire risk ignored</span>
+  </div>
+</div>
+
+<!-- Coalition / Many Voices -->
+
+<section class="coalition" id="who">
+  <div class="container">
+    <div class="coalition-intro">
+      <div class="kicker">Many fields, one warning</div>
+      <h2 class="section-h">It isn't just <em>one</em> kind of expert<br>raising the alarm.</h2>
+      <p class="section-sub">
+        There isn&rsquo;t a single reason to think we&rsquo;re living through bad policy decisions that will damage the state we love. The case against current housing policy is being made by safety officials, economists, environmentalists, planners, preservationists, architects, and affordable-housing advocates &mdash; each from their own discipline, all pointing the same direction.
+      </p>
+    </div>
+
+<div class="coalition-grid">
+  <div class="voice">
+    <span class="voice-num">i</span>
+    <div class="voice-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1 4 4 5 4 9a4 4 0 1 1-8 0c0-2 1-3 1-5"/><path d="M10 14c0 1.5 1 2 2 2s2-.5 2-2"/></svg>
+    </div>
+    <span class="voice-tag">Public Safety</span>
+    <h3>Fire &amp; <em>evacuation</em> advocates</h3>
+    <p>Adopted standards exist on the books — and are being ignored. Density mandates collide with evacuation realities in fire-prone communities.</p>
+  </div>
+  <div class="voice">
+    <span class="voice-num">ii</span>
+    <div class="voice-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20V10"/><path d="M10 20V6"/><path d="M15 20v-9"/><path d="M20 20V4"/></svg>
+    </div>
+    <span class="voice-tag">Economists</span>
+    <h3>The numbers don't <em>add up</em>.</h3>
+    <p>The 2.5 million unit mandate failed audit. State population projections are flat through 2060. Supply alone doesn&rsquo;t produce affordability.</p>
+  </div>
+  <div class="voice">
+    <span class="voice-num">iii</span>
+    <div class="voice-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l9-7 9 7v11"/><path d="M9 21v-7h6v7"/><path d="M3 21h18"/></svg>
+    </div>
+    <span class="voice-tag">Preservationists</span>
+    <h3>Streamlining erases <em>place</em>.</h3>
+    <p>Historic resources, neighborhood character, and treasured public spaces are being demolished by fast-track laws that bypass local review.</p>
+  </div>
+  <div class="voice">
+    <span class="voice-num">iv</span>
+    <div class="voice-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M5 8c0 4 3 8 7 8s7-4 7-8c0-3-2-5-5-5-2 0-3 1-4 3-1-2-2-3-4-3-3 0-5 2-5 5z" transform="translate(0 -2)"/></svg>
+    </div>
+    <span class="voice-tag">Environmentalists</span>
+    <h3>CEQA was <em>removed</em>, not reformed.</h3>
+    <p>Environmental review has been gutted in the name of speed. Wildlife corridors, watersheds, and open space are being sacrificed.</p>
+  </div>
+  <div class="voice">
+    <span class="voice-num">v</span>
+    <div class="voice-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>
+    </div>
+    <span class="voice-tag">Planners</span>
+    <h3>Local plans <em>overridden</em>.</h3>
+    <p>Decades of careful general plans, zoning, and community-developed visions are voided by state preemption — replaced with one-size-fits-all density.</p>
+  </div>
+  <div class="voice">
+    <span class="voice-num">vi</span>
+    <div class="voice-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M3 10h18"/><path d="M5 21V10"/><path d="M9 21V10"/><path d="M15 21V10"/><path d="M19 21V10"/><path d="M2 10l10-7 10 7"/></svg>
+    </div>
+    <span class="voice-tag">Local Government</span>
+    <h3>Cities pay; the state <em>collects credit</em>.</h3>
+    <p>Localities absorb hundreds of thousands &mdash; even millions &mdash; in compliance costs. They face fines and receivership but receive no funding.</p>
+  </div>
+  <div class="voice">
+    <span class="voice-num">vii</span>
+    <div class="voice-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="2"/><path d="M12 8v6"/><path d="M12 14l-6 6"/><path d="M12 14l6 6"/></svg>
+    </div>
+    <span class="voice-tag">Architects</span>
+    <h3>Bad design at <em>scale</em>.</h3>
+    <p>Streamlined approvals produce identical luxury blocks regardless of context — disconnected from climate, terrain, light, or human use.</p>
+  </div>
+  <div class="voice">
+    <span class="voice-num">viii</span>
+    <div class="voice-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="12" r="4"/><path d="M12 12h9"/><path d="M17 12v4"/><path d="M21 12v3"/></svg>
+    </div>
+    <span class="voice-tag">Affordable housing</span>
+    <h3>Luxury, labeled <em>"affordable."</em></h3>
+    <p>"Low income" units are being priced for households making $100,000+. Cities can&rsquo;t require true affordability, so developers build what pencils.</p>
+  </div>
+  <div class="voice">
+    <span class="voice-num">ix</span>
+    <div class="voice-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V11l6-5 6 5v10"/><path d="M3 21h12"/><path d="M9 21v-5"/><circle cx="19" cy="13" r="3"/><path d="M19 16v5"/><path d="M15 21h8"/></svg>
+    </div>
+    <span class="voice-tag">Families &amp; Neighborhoods</span>
+    <h3>SFH isn't <em>racist</em> &mdash; it's universal.</h3>
+    <p>Families across every culture want backyards, neighborhoods, room to raise kids. We don&rsquo;t need to destroy the neighborhoods we love to get the housing we need. Eliminating single-family homes doesn&rsquo;t democratize them &mdash; it concentrates ownership in large corporate landlords, locks ordinary families out of building wealth, and makes the homes that remain available only to the rich.</p>
+  </div>
+  <div class="voice">
+    <span class="voice-num">x</span>
+    <div class="voice-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><path d="M5 5l2 2"/><path d="M17 17l2 2"/><path d="M5 19l2-2"/><path d="M17 7l2-2"/></svg>
+    </div>
+    <span class="voice-tag">Climate</span>
+    <h3>Concrete &amp; <em>heat islands</em>.</h3>
+    <p>Mass concrete construction is among the highest-emission building methods. Densified urban cores intensify heat islands precisely as the climate warms.</p>
+  </div>
+  <div class="voice">
+    <span class="voice-num">xi</span>
+    <div class="voice-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2"/><path d="M6 8v6"/><path d="M3 14h6"/><path d="M5 14l-1 6"/><path d="M7 14l1 6"/><circle cx="17" cy="6" r="2"/><path d="M17 8v9"/><path d="M14 12l3-2 3 2"/><path d="M15 17h4"/></svg>
+    </div>
+    <span class="voice-tag">Equity</span>
+    <h3>TOD is <em>ageist &amp; ableist</em>.</h3>
+    <p>Transit-oriented development assumes everyone walks, bikes, and tolerates extreme heat. In a warming world with intense weather, that assumption fails the elderly, disabled, and vulnerable.</p>
+  </div>
+</div>
+
+<div class="coalition-coda">
+  <div class="coalition-coda-label">The pattern</div>
+  <blockquote>
+    When safety officials, economists, environmentalists, planners, and affordable-housing advocates all reach the <em>same conclusion</em> from different starting points &mdash; that&rsquo;s not a coincidence. That&rsquo;s a policy failure.
+  </blockquote>
+</div>
+
+  </div>
+</section>
+
+<!-- Three issue pillars -->
+
+<section class="section-pad">
+  <div class="container">
+    <div class="kicker">What good policy looks like</div>
+    <h2 class="section-h">Better outcomes<br>start with <em>better questions</em>.</h2>
+
+<div class="issues-grid">
+  <div class="issue-card">
+    <div class="issue-icon">i</div>
+    <h3>Communities shape their own growth.</h3>
+    <p>Local residents understand fire and evacuation realities, infrastructure limits, treasured historical resources, environmental constraints, and community needs. Cities should retain the authority to plan &mdash; not just process applications.</p>
+    <a href="#" class="issue-link">More on local control →</a>
+  </div>
+  <div class="issue-card">
+    <div class="issue-icon">ii</div>
+    <h3>Count affordability first.</h3>
+    <p>The state assigns unachievable unit targets and twists the numbers. A studio, a five-bedroom house, and a fifty-bed care facility all count as one "unit." Affordability isn't part of the total count.</p>
+    <a href="#" class="issue-link">Read the methodology →</a>
+  </div>
+  <div class="issue-card">
+    <div class="issue-icon">iii</div>
+    <h3>Developers must be accountable.</h3>
+    <p>If private entities are granted public power, they must participate in community solutions, provide enforceable affordability, and share long-term responsibility. Profit should follow public benefit, not replace it.</p>
+    <a href="#" class="issue-link">Our policy framework →</a>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<!-- CTA bar -->
+
+<section class="cta-bar" id="donate">
+  <div class="container cta-bar-inner">
+    <div>
+      <h2>We can't do this work<br><em>without you.</em></h2>
+      <p>
+        We are up against a very well-funded machine. Your help funds media, outreach, and access to legislators &mdash; and lets us put coalition resources where they matter most.
+      </p>
+    </div>
+    <div class="cta-bar-actions">
+      <a href="#" class="btn-primary">
+        Donate via GiveButter
+        <span class="arrow">→</span>
+      </a>
+      <a href="#" class="btn-ghost">
+        Mail a check
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Videos -->
+
+<section class="section-pad">
+  <div class="container">
+    <div class="kicker">Short videos</div>
+    <h2 class="section-h">The truth, told quickly.</h2>
+    <p class="section-sub">Five minutes that will change how you read every housing headline this year.</p>
+
+<div class="videos">
+  <a class="video-card" href="#">
+    <div class="video-thumb thumb-build">
+      <div class="thumb-pattern"></div>
+      <div class="video-play">▶</div>
+    </div>
+    <div class="video-meta">
+      <div class="video-meta-tag">By Todd Darling</div>
+      <h4>Empty sidewalks. Big hole in the ground.</h4>
+      <p>How the new laws are enabling the devastation of Berkeley and its livability.</p>
+    </div>
+  </a>
+  <a class="video-card" href="#">
+    <div class="video-thumb thumb-music">
+      <div class="thumb-pattern"></div>
+      <div class="video-play">▶</div>
+    </div>
+    <div class="video-meta">
+      <div class="video-meta-tag">Music Video</div>
+      <h4>SB 79 — It's an Heavy Load to Bear</h4>
+      <p>SB 79 in song. From Residents 4 Localized Affordable Neighborhood Dev.</p>
+    </div>
+  </a>
+  <a class="video-card" href="#">
+    <div class="video-thumb thumb-money">
+      <div class="thumb-pattern"></div>
+      <div class="video-play">▶</div>
+    </div>
+    <div class="video-meta">
+      <div class="video-meta-tag">SF Propel</div>
+      <h4>Affordable Housing for All</h4>
+      <p>Hear from market-rate &amp; affordable developers on the real barrier: financing, not zoning.</p>
+    </div>
+  </a>
+</div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand-name" style="font-family:'DM Serif Display', serif; font-size:34px; line-height:0.9;">Wake Up <em>California</em></div>
+        <p class="footer-tagline">
+          A 501(c)(4) statewide alliance building a movement for livable, affordable, welcoming communities &mdash; and pushing back on policies that harm California.
+        </p>
+      </div>
+      <div>
+        <div class="footer-h">Issues</div>
+        <ul class="footer-list">
+          <li><a href="#">Why</a></li>
+          <li><a href="#">Fire</a></li>
+          <li><a href="#">Solutions</a></li>
+          <li><a href="#">Legislation</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-h">Resources</div>
+        <ul class="footer-list">
+          <li><a href="#">Research</a></li>
+          <li><a href="#">Audits</a></li>
+          <li><a href="#">Allies</a></li>
+          <li><a href="#">Letter portal</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-h">Connect</div>
+        <p class="footer-address">
+          Info.WakeUpCA@gmail.com<br><br>
+          35 Miller Ave, #574<br>
+          Mill Valley, CA 94941
+        </p>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>© 2026 Wake Up California</span>
+      <span>This site is updated often.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Tiny scroll-reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.section-h, .myth, .voice, .issue-card, .video-card, .why-quote, .coalition-coda blockquote').forEach(el => {
+    el.classList.add('reveal');
+    io.observe(el);
+  });
+</script>
+
+</body>
+</html>
